@@ -45,10 +45,10 @@ app.post('/handwriting', (req, res) => {
   const canvas = createCanvas(canvasWidth, canvasHeight);
   const ctx = canvas.getContext('2d');
  
-  ctx.fillStyle = '#ffffff';
+  ctx.fillStyle = '#ffffff00';
   ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-  ctx.fillStyle = '#000000';
+  ctx.fillStyle = '#000000ff';
   ctx.font = '20px "Pacifico"';
   ctx.fillText(text, padding, 40); 
 
