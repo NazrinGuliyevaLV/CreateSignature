@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        async function main() {
+            const res = await fetch("/handwriting", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    text: "Nezrin Quliyeva"
+                })
+            });
+        }
+
+        main();
+    </script>
+</body>
+</html>
