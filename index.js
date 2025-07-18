@@ -18,15 +18,15 @@ registerFont(path.join(__dirname, 'fonts', 'Pacifico-Regular.ttf'), {
 
 
 app.get('/', (req, res) => {
-    res.render('index'); 
+    res.render('index.ejs'); 
     
 });
 
 
 app.post('/handwriting', (req, res) => {
-  const { text } = req.body;
+  const { fullname } = req.body;
 
-  if (!text) {
+  if (!fullname) {
     return res.status(400).send('Text is required');
   }
 
@@ -35,7 +35,7 @@ app.post('/handwriting', (req, res) => {
   const tempCtx = tempCanvas.getContext('2d');
   tempCtx.font = '20px "Pacifico"';
 
-  const textMetrics = tempCtx.measureText(text);
+  const textMetrics = tempCtx.measureText(fullname);
   const textWidth = Math.ceil(textMetrics.width); 
   console.log("text width:",textWidth);
   const padding = 10;  
@@ -50,10 +50,12 @@ app.post('/handwriting', (req, res) => {
 
   ctx.fillStyle = '#000000ff';
   ctx.font = '20px "Pacifico"';
-  ctx.fillText(text, padding, 40); 
+  ctx.fillText(fullname, padding, 40); 
 
   res.setHeader('Content-Type', 'image/png');
   canvas.pngStream().pipe(res);
+
+  
 });
 
 

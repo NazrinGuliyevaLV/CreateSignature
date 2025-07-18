@@ -7,13 +7,13 @@
 <body>
     <script>
         async function main() {
-            const res = await fetch("/handwriting", {
+            const res = await fetch("http://localhost:3000/handwriting", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    text: "Nezrin Quliyeva"
+                    fullname: "Nezrin Quliyeva2333"
                 })
             });
         }
