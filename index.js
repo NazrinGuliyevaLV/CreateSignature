@@ -11,8 +11,8 @@ app.use(express.json());
 
 
 app.set('view engine', 'ejs');
-registerFont(path.join(__dirname, 'fonts', 'DancingScript-Regular.ttf'), {
-  family: 'Dancing Script'
+registerFont(path.join(__dirname, 'fonts', 'Pacifico-Regular.ttf'), {
+  family: 'Pacifico'
 });
 
 
@@ -34,7 +34,7 @@ app.post('/handwriting', (req, res) => {
  
   const tempCanvas = createCanvas(0, 0);
   const tempCtx = tempCanvas.getContext('2d'); 
-  tempCtx.font = '28px "Dancing Script"';
+  tempCtx.font = '28px "Pacifico"';
 
 
   const textMetrics = tempCtx.measureText(fullname);
@@ -52,7 +52,7 @@ app.post('/handwriting', (req, res) => {
 
   ctx.fillStyle = '#000000ff';
  
-ctx.font = '28px "Dancing Script"';
+ctx.font = '28px "Pacifico"';
   ctx.fillText(fullname, padding, 40); 
 
   res.setHeader('Content-Type', 'image/png');
